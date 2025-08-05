@@ -72,6 +72,27 @@ return {
     config = true
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
-  }
+  },
+  {
+    "rose-pine/neovim",
+    config = function()
+      require("rose-pine").setup({
+        styles = {
+          italic = false
+        }
+      })
+    end
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { "lua", "vim", "bash", "python", "json" }, -- add more as needed
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end,
+  },
 }
 
