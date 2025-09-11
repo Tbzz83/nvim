@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Neotree
 vim.keymap.set("n", '<leader>n', ':Neotree toggle<CR>')
+--vim.keymap.set("n", "<leader>n", ":Neotree focus<CR>")
 
 -- Code runner
 vim.keymap.set('n', '<leader>rr', ':RunCode<CR>', { noremap = true, silent = false })

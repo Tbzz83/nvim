@@ -29,6 +29,11 @@ return {
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
       vim.diagnostic.config({virtual_text = true}) -- This is the warning message text
       vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
+
+      vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
+      pattern = {"*.tf", "*.tfvars"},
+      command = "set filetype=terraform"
+    })
     end
   },
   {

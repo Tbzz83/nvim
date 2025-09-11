@@ -25,17 +25,18 @@ return {
     lazy = false,
     priority = 1000,
   },
+  -- using lazy.nvim
+  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    lazy = false, -- neo-tree will lazily load itself
-
-    opts = opts
+    lazy = false,
+    opts = {}
   },
   {
     "navarasu/onedark.nvim",
