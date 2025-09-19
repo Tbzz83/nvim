@@ -3,6 +3,14 @@ local opts = {}
 return {
   {"iagorrr/noctishc.nvim"},
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { 
+    "Shatur/neovim-ayu", name = "ayu", priority = 1000,
+    config = function()
+      require('ayu').setup({
+        mirage = true
+        })
+    end
+  },
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' }
