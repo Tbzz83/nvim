@@ -7,21 +7,6 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set signcolumn=yes")
 vim.wo.relativenumber = true
 
--- Force 2-space indentation for Python
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "python",
-  callback = function()
-    -- Set local buffer options
-    vim.bo.expandtab = true
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.shiftwidth = 2
-
-    -- Disable ftplugin indent override
-    vim.g.python_recommended_style = 0
-  end,
-})
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
