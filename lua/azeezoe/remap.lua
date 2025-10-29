@@ -19,3 +19,5 @@ vim.keymap.set("n", "<leader>lr", function()
     vim.cmd("LspRestart")
     vim.cmd("e")
 end, { desc = "Restart LSP and reload buffer" })
+
+vim.keymap.set("v", "<leader>y", '"+y', {})
