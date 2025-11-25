@@ -108,7 +108,7 @@ return {
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "go", "rust", "lua", "vim", "bash", "python", "json" }, -- add more as needed
+                ensure_installed = { "c", "go", "rust", "lua", "vim", "bash", "python", "json" }, -- add more as neededQ
                 highlight = { enable = true },
                 indent = { enable = true },
             })
