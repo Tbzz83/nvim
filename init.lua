@@ -42,14 +42,17 @@ require("lazy").setup("plugins")
 --vim.cmd.colorscheme "catppuccin"
 
 require("neo-tree").setup({
+    filesystem = {
+        follow_current_file = {
+            enabled = true,
+            leave_dirs_open = false,
+        },
+    },
     event_handlers = {
-
         {
             event = "file_open_requested",
             handler = function()
                 -- auto close
-                -- vim.cmd("Neotree close")
-                -- OR
                 require("neo-tree.command").execute({ action = "close" })
             end,
         },
