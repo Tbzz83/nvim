@@ -2,6 +2,10 @@
 My personal neovim configuration
 
 Heres my .tmux.conf as well
+make sure to download the cattpuccin and tmux-cpu and tmux-battery themes:
+https://github.com/tmux-plugins/tmux-battery
+https://github.com/tmux-plugins/tmux-cpu
+https://github.com/catppuccin/tmux
 
 ```
 # Reload config
