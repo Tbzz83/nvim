@@ -2,6 +2,19 @@ local opts = {}
 
 return {
     {
+        -- Make sure tree-sitter-cli is installed (via apt, or whatever)
+        "nvim-treesitter/nvim-treesitter",
+        lazy = false,
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {"c_sharp", "http", "typescript", "javascript", "c", "go", "rust", "lua", "vim", "bash", "python", "json" }, -- add more as neededQ
+                highlight = { enable = true },
+                indent = { enable = true },
+            })
+        end,
+    },
+    {
       "rest-nvim/rest.nvim",
       dependencies = {
         "nvim-treesitter/nvim-treesitter",
@@ -10,6 +23,24 @@ return {
           table.insert(opts.ensure_installed, "http")
         end,
       }
+    },
+    {
+        -- https://github.com/iamcco/markdown-preview.nvim/issues/690
+        -- Install markdown preview, use npx if available.
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function(plugin)
+          if vim.fn.executable "npx" then
+            vim.cmd("!cd " .. plugin.dir .. " && cd app && npx --yes yarn install")
+          else
+            vim.cmd [[Lazy load markdown-preview.nvim]]
+            vim.fn["mkdp#util#install"]()
+          end
+        end,
+        init = function()
+          if vim.fn.executable "npx" then vim.g.mkdp_filetypes = { "markdown" } end
+        end,
     },
     { "iagorrr/noctishc.nvim" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -110,17 +141,6 @@ return {
                 styles = {
                     italic = false,
                 },
-            })
-        end,
-    },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {"c_sharp", "http", "typescript", "javascript", "c", "go", "rust", "lua", "vim", "bash", "python", "json" }, -- add more as neededQ
-                highlight = { enable = true },
-                indent = { enable = true },
             })
         end,
     },
