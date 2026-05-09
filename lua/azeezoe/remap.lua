@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent =
 
 -- for refreshing using tmux
 vim.keymap.set("n", "<leader>lr", function()
-    vim.cmd("LspRestart")
+    vim.cmd("lsp restart")
     vim.cmd("e")
 end, { desc = "Restart LSP and reload buffer" })
 
