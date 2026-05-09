@@ -9,7 +9,21 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                --ensure_installed = { "lua_ls", "htmx", "emmet_ls", "gopls", "rust_analyzer", "html", "clangd", "terraformls", "bashls"}
+                ensure_installed = {
+--                    "lua_ls",
+--                    "htmx",
+--                    "emmet_ls",
+--                    "gopls",
+--                    "rust_analyzer",
+--                    "html",
+--                    "clangd",
+--                    "terraformls",
+--                    "bashls",
+--                    "jdtls",
+--                    "pyright",
+--                    "typescript_language_server",
+--                    "omnisharp",
+                    }
             })
         end,
     },
