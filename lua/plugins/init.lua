@@ -2,17 +2,33 @@ local opts = {}
 
 return {
     {
-        -- Make sure tree-sitter-cli is installed (via apt, or whatever)
-        "nvim-treesitter/nvim-treesitter",
-        lazy = false,
-        build = ":TSUpdate",
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {"c_sharp", "http", "typescript", "javascript", "c", "go", "rust", "lua", "vim", "bash", "python", "json" }, -- add more as neededQ
-                highlight = { enable = true },
-                indent = { enable = true },
-            })
-        end,
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      branch = "master",
+      config = function()
+        require("nvim-treesitter.configs").setup({
+          ensure_installed = {
+            "lua",
+            "python",
+            "javascript",
+            "typescript",
+            "bash",
+            "yaml",
+            "json",
+            "terraform",
+            "hcl",
+            "java",
+            "c_sharp",
+            "markdown",
+            "markdown_inline",
+            "vim",
+            "vimdoc",
+          },
+          auto_install = true,
+          highlight = { enable = true },
+          indent = { enable = true },
+        })
+      end,
     },
     {
       "rest-nvim/rest.nvim",
