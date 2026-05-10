@@ -30,9 +30,12 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            --      local lspconfig = require("lspconfig")
-            --      lspconfig.lua_ls.setup({})
-            --      lspconfig.clangd.setup({})
+            vim.lsp.config('html', {
+                filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+            })
+            vim.lsp.enable('html')
+            --      vim.lsp.config('lua_ls', {})
+            --      vim.lsp.config('clangd', {})
             --      lspconfig.basedpyright.setup({})
             --      lspconfig.terraformls.setup({})
             --      lspconfig.bashls.setup({})
