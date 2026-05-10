@@ -1,4 +1,5 @@
 # nvim
+## COMPATIBLE WITH NVIM 11 ONLY
 My personal neovim configuration
 
 For the tmux.cfg
