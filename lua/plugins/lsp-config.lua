@@ -34,6 +34,15 @@ return {
                 filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
             })
             vim.lsp.enable('html')
+            -- Make jdtls re-resolve Gradle/Maven deps automatically when build.gradle changes,
+            -- so adding a dependency just works on reload (like every other LSP).
+            vim.lsp.config('jdtls', {
+                settings = {
+                    java = {
+                        configuration = { updateBuildConfiguration = "automatic" },
+                    },
+                },
+            })
             --      vim.lsp.config('lua_ls', {})
             --      vim.lsp.config('clangd', {})
             --      lspconfig.basedpyright.setup({})
