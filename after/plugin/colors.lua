@@ -1,11 +1,12 @@
 function ColorMyPencils(color)
     --color = color or "onedark"
-    color = color or "gruvbox"
+    --color = color or "gruvbox"
     --color = color or "monokai-nightasty"
     --color = color or "everforest"
     --color = color or "catppuccin"
     --color = color or "ayu"
     --color = color or "tokyonight"
+    color = color or "nord"
     vim.cmd.colorscheme(color)
 
       

@@ -60,6 +60,7 @@ return {
     },
     { "iagorrr/noctishc.nvim" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "shaunsingh/nord.nvim", name = "nord", priority = 1000 },
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = function ()
                 require("gruvbox").setup({
                     italic = {
