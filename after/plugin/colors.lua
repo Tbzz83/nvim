@@ -1,8 +1,9 @@
 function ColorMyPencils(color)
     --color = color or "onedark"
     --color = color or "gruvbox"
-    color = color or "monokai-nightasty"
+    --color = color or "monokai-nightasty"
     --color = color or "everforest"
+    color = color or "kanagawa-paper"
     --color = color or "catppuccin"
     --color = color or "ayu"
     --color = color or "tokyonight"
