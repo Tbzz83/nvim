@@ -9,7 +9,7 @@ vim.wo.relativenumber = true
 vim.g.editorconfig = false
 
 -- Theme
-vim.opt.background = "dark"
+vim.opt.background = "light"
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

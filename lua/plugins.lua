@@ -33,8 +33,21 @@ return {
         end,
     },
     {
-        "sainnhe/everforest",
-        name = "everforest"
+        "neanias/everforest-nvim",
+        priority = 1000,
+        config = function()
+            require("everforest").setup({
+                background = "soft",
+                transparent_background_level = 0,
+                italics = true,
+                disable_italic_comments = false,
+                sign_column_background = "none",
+                ui_contrast = "low",
+                dim_inactive_windows = false,
+                diagnostic_virtual_test = "coloured",
+                spell_foreground = false,
+            })
+        end,
     },
     {
         "nvim-telescope/telescope.nvim",
