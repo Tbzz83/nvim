@@ -11,3 +11,5 @@ https://github.com/catppuccin/tmux
 symlink the ~/.tmux.conf file to the tmux.cfg file
 
 same for the kitty.cfg
+
+Obviously I'm not linking my .bashrc, but I'm using the `duru` theme from oh-my-bash
