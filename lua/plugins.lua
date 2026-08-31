@@ -14,14 +14,6 @@ return {
         })
     end
     },
-    { "ellisonleao/gruvbox.nvim", priority = 1000, config = function ()
-                require("gruvbox").setup({
-                    italic = {
-                        strings = false,
-                        contrast = "soft",
-                    },
-                })
-        end, opts = {} },
     {
         "Shatur/neovim-ayu",
         name = "ayu",

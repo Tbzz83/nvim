@@ -8,6 +8,15 @@ return {
       opts = {},
     },
     {
+      'embark-theme/vim',
+      lazy = false,
+      priority = 1000,
+      name = 'embark',
+      config = function()
+        vim.cmd.colorscheme('embark')
+      end
+    },
+    {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       branch = "master",
@@ -70,8 +79,8 @@ return {
     { "ellisonleao/gruvbox.nvim", priority = 1000, config = function ()
                 require("gruvbox").setup({
                     italic = {
-                        strings = false,
-                        contrast = "soft",
+                        strings = true,
+                        contrast = "hard",
                     },
                 })
         end, opts = {} },
