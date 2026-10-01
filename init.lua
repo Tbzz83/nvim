@@ -5,6 +5,7 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set signcolumn=yes")
+vim.cmd("let g:ftplugin_sql_omni_key = '<C-j>'")
 vim.wo.relativenumber = true
 vim.g.editorconfig = false
 
